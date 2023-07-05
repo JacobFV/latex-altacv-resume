@@ -1,0 +1,250 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.1.4, 27 July 2018) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons 
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper]{altacv}
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages. 
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols.
+%% 
+%% Compile with LuaLaTeX for best results. If you
+%% want to use XeLaTeX, you may need to install
+%% Academicons.ttf in your operating system's font 
+%% folder.
+
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+% Change the font if you want to.
+
+% If using pdflatex:
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{lato}
+
+% If using xelatex or lualatex:
+% \setmainfont{Lato}
+
+% Change the colours if you want to
+\definecolor{Navy}{HTML}{000080}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Navy}
+\colorlet{accent}{Navy}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\usepackage[colorlinks]{hyperref}
+\usepackage{ragged2e}
+\usepackage{multicol}
+
+% TODO: maybe add hspace to other icons
+\newcommand{\gh}[1]{\href{https://github.com/#1}{\printinfo{\githubsymbol}{#1}}}
+\newcommand{\site}[1]{\printinfo{\homepagesymbol}{#1}}
+\newcommand{\loc}[1]{\faMapMarker\hspace{0.5em}#1} % maybe update to \location icon
+\usepackage{emoji}
+\usepackage{minibox}
+
+\begin{document}
+
+\name{Jacob Valdez}
+\tagline{Software Engineer}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{\href{mailto:jacob.valdez@limboid.ai}{jacob.valdez@limboid.ai}}
+  \phone{\href{tel:14699689490}{+1 469 968 9490}}
+  \homepage{\href{https://jacobfv.github.io/}{jacobfv.github.io}} \\
+  \twitter{\href{https://twitter.com/JacobFValdez}{@JacobFValdez}}
+  \github{\href{https://github.com/JacobFV}{JacobFV}}
+  \linkedin{\href{https://linkedin.com/in/jacob-f-valdez}{jacob-f-valdez}}
+  %% \location{1831 McAlpin rd., Midlothian TX, 76065}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+%   \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+%% Make the header extend all the way to the right, if you want. 
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+
+\cvsection[page1sidebar]{Employment}
+
+\cvevent{Software Engineer}{Motio Inc}{June 2022 -- Jan 2023}{\site{\href{https://motio.com/}{motio.com}}}
+\begin{itemize}
+    \item Developed Soterre for \href{https://motio.com/products/soterre/soterre-for-qlik-sense/}{Qlik Sense}
+    \item Intern Jan -- Aug. Full time SE Aug. '22 -- Jan '23
+\end{itemize}
+
+\divider
+
+\cvevent{Student Research Assistant}{IT Lab, UTA}{June 2021 -- May 2022}{\site{\href{https://itlab.uta.edu}{itlab.uta.edu}}}
+\begin{itemize}
+    \item Collaborated with research group to evolve and test a flask-based statistical visualization tool \href{https://github.com/banditsbeware/dash}{CoWiz}
+    \item Developed full stack web server \href{https://github.com/JacobFV/mln-dashboard}{MLN-Dashboard} using Next-React-GraphQL-Strapi stack
+\end{itemize}
+
+\cvevent{Student Research Assistant}{UTA College of Social Work}{June 2021 -- May 2022}{\loc{Arlington TX}}
+\begin{itemize}
+    \item Maintained and enhanced multi-platform (iOS and Android) data collecting application \href{http://myamble.github.io/myamble-user-website}{MyAmble} and web admin dashboard
+    \item Stack: javascript, firebase, flutter (mobile), and vue (admin dash)
+\end{itemize}
+
+\divider
+
+\cvevent{Crew Trainer}{McDonald's}{May 2016 -- Mar 2020}{\loc{Midlothian TX}}
+\begin{itemize}
+    \item Led safety committee and addressed employees during 30-minute monthly safety meetings
+    \item Trained employees on-the-job and formally
+    \item In addition to 4 years of formal education, actively used Spanish on-the-job
+\end{itemize}
+
+\cvsection{Education}
+
+\cvevent{B.S. Computer Science}{The University of Texas at Arlington}{June 2020 -- Aug 2022}{\loc{Arlington TX}}
+GPA 3.6/4.0; graduated Aug 2022
+
+\divider
+
+\cvevent{A.A.S. in Mathematics}{Navarro College}{Sept 2014 -- May 2018}{\loc{Waxahachie TX}}
+GPA 3.9/4.0; Dual-credit program; 85 hours taken
+
+\clearpage
+
+\cvsection[page2sidebar]{Projects}
+
+\cvevent{The Agent Suite}{Department-Specialized Autonomous Agents}{May 2023 -- Present}{\site{\href{https://theagentsuite.versoly.page/}{homepage}}}
+\begin{itemize}
+    \item Stack: supabase, postgres, langchain, sqlmodel, pydantic, fastapi, draftbit, react-native
+    \item Teammates: Garrett Sheyan \& Matt Patternostro
+    \item WIP. Source available on request.
+\end{itemize}
+\divider
+
+\cvevent{Limboid}{Humanoid robot}{Feb 2019 -- Present}{\site{\href{https://limboid.ai}{limboid.ai}}}
+\begin{itemize}
+    \item Hydraulic actuated, endoskeletal humanoid robot
+    \item Technologies: 3D Printing, CNC routing, plasma cutting, PCB fab
+    \item Heavy construction. No end in sight.
+    \item Artifacts available on request
+\end{itemize}
+\divider
+
+\cvevent{MLN-Dashboard}{Modular server for data visualization}{Oct 2021 -- May 2022}{\minibox{\gh{JacobFV/mln-dashboard} \\ \site{\href{https://youtu.be/sse4oCkBQ7k}{Presentation}}}}
+\begin{itemize}
+    \item Stack: typescript, react, next.js, GraphQL, Prisma, and later Strapi
+\end{itemize}
+\divider
+
+\cvevent{Jnumpy}{Another autograd/deep learning/RL library}{Oct -- Nov 2021}{\gh{JacobFV/jnumpy}}
+\divider
+
+\cvevent{20Q: 20 Questions Android Game}{Android app developer in a 4-person group}{June -- Aug 2021}{\minibox{\gh{JacobFV/20Questions} \\ \site{\href{https://jacobfv.github.io/projects/20Q/}{jacobfv.github.io/projects/20Q}}}}
+\begin{itemize}
+    \item Stack: Android, SQLite, Java, Kotlin
+    \item Design, development, and testing
+\end{itemize}
+\divider
+
+\cvevent{multigraph-nn}{Dynamic time multi-graph neural network framework}{May 2021}{\gh{JacobFV/multigraph-nn}}
+\begin{itemize}
+    \item Stack: Python, tensorflow, keras
+\end{itemize}
+\divider
+
+\cvevent{DesparadosAEye}{chatGPT before chatGPT (but nowhere near as good)}{Jan -- May 2021}{\gh{kmosoti/DesparadosAEYE}}
+\begin{itemize}
+    \item Stack: Android, SQLite, Java, Kotlin, TFLite, BlenderBot
+    \item Organized team, general app architecture \& development, and MLOps
+\end{itemize}
+\divider
+
+\clearpage
+
+\cvevent{Stanford Open Datathon Group Project}{Performed data science in 5-student international group}{Apr 2021}{\site{ \href{https://jacobfv.github.io/projects/2021\_SODP}{jacobfv.github.io/projects/2021\_SODP}}}
+\divider
+
+\cvevent{Home Internet Factory}{CNC router + 3D printer + Raspberry Pi 4 + camera + Internet}{Apr 2020}{\site{\href{https://jacobfv123.medium.com/industrialautomation-home-bba924a3b2f0}{jacobfv123.medium.com/industrialautomation-home-bba924a3b2f0}}}
+\divider
+
+\cvevent{Workplace Surveillance System}{Employee phone detection computer vision system}{July 2019}{\gh{JacobFV/Workplace-Surveillance-System}}
+\begin{itemize}
+    \item Stack: web 1.0, tensorflow.js, mobilenet 
+    \item Demonstration to employer succeeded identifying employees on their phone, but employer didn't end up purchasing a subscription
+\end{itemize}
+\divider
+
+\cvevent{Big Blender Farm}{AWS Generative Blender Design System Concept}{July 2018 -- Apr 2019}{}
+\begin{itemize}
+    \item Although never completed, became more familiar with Blender python scripting, general animation workflow, web application development, and the internet
+    \item Planned extensively how to use Amazon Web Services (AWS) WAF, API-Endpoints, Lambda, static S3 buckets, CloudFront, and DynamoDB to deliver content and application on a completely serverless architecture
+\end{itemize}
+\divider
+
+\cvevent{SQT-English-to-Spanish-Translator}{Flexible C\# Spanish – English translation system}{Oct -- Nov 2016}{\gh{JacobFV/SQT-English-to-Spanish-Translator}}
+\divider
+
+\cvevent{Sale Translator}{Basic C\# Spanish – English translation system}{Oct -- Nov 2015}{\gh{JacobFV/Sale}}
+\divider
+
+\cvevent{Cookie Cutter CNC}{Full stack engineering project}{Mar -- May 2015}{\site{\href{https://jacobfv123.medium.com/cookie-cutter-cnc-923c68932ee6}{jacobfv123.medium.com/cookie-cutter-cnc-923c68932ee6}}}
+\begin{itemize}
+    \item 36”×36” sheet metal cutter with server and Arduino client control systems: \gh{JacobFV/CookieControl} \gh{JacobFV/Arduino-CookieControl}
+    \item Designed and developed C\# .svg parser, toolpath scheduler, and optimizer, Arduino controller with serial protocol and electronics, and CNC machine with electrodischarge machining head.
+    \item Presented on project in May 2015 and June 2016
+\end{itemize}
+\divider
+
+\cvevent{Copyright Calculator}{Scripted conversation bot to help students stay safe}{Sept 2014}{\gh{JacobFV/Copyright-Calculator}}
+\divider
+
+\cvevent{CookieBaker 3D Printer}{Programmable 12×12 2D gantry}{Mar -- May 2013}{\site{\href{https://jacobfvaldez.weebly.com/engineering.html\#cookiebaker_3d_printer}{jacobfvaldez.weebly.com/engineering}}}
+\begin{itemize}
+    \item Learned mechanical engineering basics
+    \item Intended to make a 3D printer, but extruder never added
+    \item Re-attempted project in October 2014 with design modifications
+\end{itemize}
+
+\centering
+\textit{More work \href{https://jacobfv.github.io/projects/}{here}.}
+
+\end{document}
